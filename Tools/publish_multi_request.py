@@ -20,7 +20,7 @@ RELEASE_DIR = "release"
 # CONFIGURATION PARAMETERS
 # Forks should change these to publish to their own infrastructure.
 #
-ROBUST_CDN_URL = "https://cdn.fulp.gg"
+ROBUST_CDN_URL = "https://cdn.fulp.gg/"
 FORK_ID = "fuobstation"
 
 def main():
