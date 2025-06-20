@@ -17,8 +17,6 @@ name: Publish
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 10 * * *'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -26,7 +24,7 @@ concurrency:
 
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps:
     - name: Install dependencies
