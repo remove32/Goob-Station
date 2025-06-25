@@ -1,0 +1,146 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  save: false
+  name: Urist McSteak
+  parent: BaseMobSpeciesOrganic
+  id: BaseMobBeefman
+  abstract: true
+  components:
+  - type: HumanoidAppearance
+    species: Beefman
+  - type: Icon
+    sprite: _Fulp/Mobs/Species/Beefman/parts.rsi
+    state: full
+  - type: Body
+    prototype: Beefman
+    requiredLegs: 2
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Beefman
+#  - type: DamageVisuals
+#    damageOverlayGroups:
+#      Brute:
+#        sprite: _Shitmed/Mobs/Effects/brute_damage.rsi
+#        color: "#896e55"
+#      Burn:
+#        sprite: _Shitmed/Mobs/Effects/burn_damage.rsi
+  - type: Butcherable
+    butcheringType: Spike
+    spawned:
+      - id: FoodMeat
+        amount: 11
+  - type: Bloodstream
+    bloodReagent: Blood
+  - type: Flammable
+    damage:
+      types:
+        Heat: 1
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 100 #fairly light
+        restitution: 0.0
+        mask:
+          - MobMask
+        layer:
+          - MobLayer
+  # - type: TypingIndicator
+  #   proto: gingerbread
+  # - type: Inventory
+  #   femaleDisplacements:
+  #     jumpsuit:
+  #       sizeMaps:
+  #         32:
+  #           sprite: Mobs/Species/Human/displacement.rsi
+  #           state: jumpsuit-female
+
+
+- type: entity
+  parent: BaseSpeciesDummy
+  id: MobBeefmanDummy
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HumanoidAppearance
+    species: Beefman
+  # - type: Inventory
+  #   femaleDisplacements:
+  #     jumpsuit:
+  #       sizeMaps:
+  #         32:
+  #           sprite: Mobs/Species/Human/displacement.rsi
+  #           state: jumpsuit-female
+
+
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: body
+  id: Beefman
+  name: beefman
+  root: chest
+  slots:
+    head:
+      part: HeadBeefman
+      connections:
+      - chest
+      organs:
+        brain: OrganHumanBrain
+        eyes: OrganHumanEyes
+    chest:
+      part: ChestBeefman
+      connections:
+      - right arm
+      - left arm
+      - groin
+      - head # Shitmed
+      organs:
+        heart: OrganHumanHeart
+        lungs: OrganHumanLungs
+    groin:
+      part: GroinBeefman
+      connections:
+      - right leg
+      - left leg
+      organs:
+        stomach: OrganHumanStomach
+        liver: OrganHumanLiver
+        kidneys: OrganHumanKidneys
+    right arm:
+      part: RightArmBeefman
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmBeefman
+      connections:
+      - left hand
+    right hand:
+      part: RightHandBeefman
+    left hand:
+      part: LeftHandBeefman
+    right leg:
+      part: RightLegBeefman
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegBeefman
+      connections:
+      - left foot
+    right foot:
+      part: RightFootBeefman
+    left foot:
+      part: LeftFootBeefman
+
+- type: damageModifierSet
+  id: Beefman
+  coefficients:
+    Blunt: 0.8
+    Burn: 0.6
+    Cold: 0.0
+    Radiation: 1.2
+    Asphyxiation: 0.0
+    Bloodloss: 1.1
+    # Cellular: 0.0 # Goobstation - changelings
+  ignoreArmorPierceFlags: All # Goobstation
