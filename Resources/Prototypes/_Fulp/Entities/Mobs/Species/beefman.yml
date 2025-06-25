@@ -50,13 +50,13 @@
           - MobLayer
   # - type: TypingIndicator
   #   proto: gingerbread
-  # - type: Inventory
-  #   femaleDisplacements:
-  #     jumpsuit:
-  #       sizeMaps:
-  #         32:
-  #           sprite: Mobs/Species/Human/displacement.rsi
-  #           state: jumpsuit-female
+  - type: Inventory
+    displacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: _Fulp/Mobs/Species/Beefman/displacement.rsi
+            state: jumpsuit
 
 
 - type: entity
