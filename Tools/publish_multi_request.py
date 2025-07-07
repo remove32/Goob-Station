@@ -21,7 +21,7 @@ RELEASE_DIR = "release"
 # Forks should change these to publish to their own infrastructure.
 #
 ROBUST_CDN_URL = "https://cdn.fulp.gg/"
-FORK_ID = "fuobstation"
+FORK_ID = "fulpstation"
 
 def main():
     session = requests.Session()
